@@ -11,14 +11,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20190306124902) do
+ActiveRecord::Schema.define(version: 20190306125346) do
 
   create_table "conversations", force: :cascade do |t|
     t.integer  "sender_id"
     t.integer  "recipient_id"
     t.datetime "created_at"
     t.datetime "updated_at"
+    t.string   "slug"
   end
+
+  add_index "conversations", ["slug"], name: "index_conversations_on_slug", unique: true
 
   create_table "friendly_id_slugs", force: :cascade do |t|
     t.string   "slug",                      null: false

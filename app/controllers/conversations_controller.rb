@@ -7,6 +7,9 @@ class ConversationsController < ApplicationController
         #redirect_to root_path, alert: "You are not authorized" unless current_user.employer?
     end
     
+    def show
+    end
+    
     def create
         if Conversation.between(params[:sender_id], params[:recipient_id]).present?
             @conversation = Conversation.between(params[:sender_id], params[:recipient_id]).first
