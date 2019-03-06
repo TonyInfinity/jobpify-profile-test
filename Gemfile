@@ -53,6 +53,7 @@ gem 'mini_magick', '~> 4.8'
 gem 'trix', '~> 0.11.1'
 gem 'stripe', '~> 4.5'
 gem 'figaro'
+gem 'friendly_id', '~> 5.2.4'
 
 group :development, :test do
   gem 'better_errors'
