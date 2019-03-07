@@ -1,5 +1,6 @@
 <div class="columns pt4 pb7 has-background-white-bis">
   <div class="column is-7 is-offset-1">
+    <a class="button" href="/jobs/"><i class="fa fa-arrow-left"></i></a><br><br>
     <div class="box">
     <!--<p class="f7"><i class="fa fa-clock"></i> Được đăng <%= time_ago_in_words(@job.created_at) %> trước</p>-->
     <p class="f7"><i class="fa fa-clock"></i> Được đăng vào ngày <%= @job.created_at.strftime("%d-%m-%Y") %></p>
@@ -50,35 +51,53 @@
     <p class="is-5 has-text-danger has-text-centered"><%= @job.job_author %></p>
     <hr />
     <div class="mt2 mb4">
-    <a class="button is-small is-fullwidth" href="<%= @job.url %>">
+    <!--<a class="button is-small is-fullwidth" href="<%= @job.url %>">
     <span>Đi tới website</span>
     <span class="icon is-small">
       <i class="fa fa-globe"></i>
     </span>
+    </a>-->
+    <a class="button is-fullwidth" href="<%= @job.url %>">
+    <span class="icon is-small">
+      <i class="fa fa-globe"></i>
+    </span>
+    <span>Đi tới website</span>
     </a>
     <br>
-    <a class="button is-small is-fullwidth" id="showModal">
+    <!--<a class="button is-small is-fullwidth" id="showModal">
     <span>Thông tin công ti</span>
     <span class="icon is-small">
       <i class="fa fa-info-circle"></i>
     </span>
+    </a>-->
+    <a class="button is-fullwidth" id="showModal">
+    <span class="icon is-small">
+      <i class="fa fa-info-circle"></i>
+    </span>
+    <span>Về nhà tuyển dụng</span>
     </a>
     </div>
     <hr />
     <% @users.each do |user| %>
             <% if user.id != current_user.id %>
             <% if user.id == @job.user_id %>
-             <%= link_to "Ứng tuyển trực tiếp", conversations_path(sender_id: current_user.id, recipient_id: @job.user_id), method: "post", class: "button is-rounded is-fullwidth" %>
-         <% end %>
+            <%= link_to raw("<span class=\"icon is-small\"><i class=\"fa fa-share-square\"></i></span><span>Ứng tuyển trực tiếp</span>"), conversations_path(sender_id: current_user.id, recipient_id: @job.user_id), method: "post", class: "button is-fullwidth" %>
+           <% end %>
           <% end %>
     <% end %>
     <hr />
-    <a class="button is-small is-fullwidth" onClick="window.open('mailto:test@example.com?subject=subject&body=body');">
+    <!--<a class="button is-small is-fullwidth" onClick="window.open('mailto:test@example.com?subject=subject&body=body');">
     <span>Phản ánh công việc</span>
     <span class="icon is-small">
       <i class="fa fa-exclamation-triangle"></i>
     </span>
-  </a>
+    </a>-->
+    <a class="button is-fullwidth" onClick="window.open('mailto:test@example.com?subject=subject&body=body');">
+    <span class="icon is-small">
+      <i class="fa fa-exclamation-triangle"></i>
+    </span>
+    <span>Phản ánh</span>
+    </a>
     <% if current_user.try(:admin) || job_author(@job) %>
       <ul class="pv3">
         <li class="pv1 f6">Quyền của người đăng: </li>

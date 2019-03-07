@@ -1,21 +1,12 @@
 <nav class="panel" style="padding-top:10px">
-  <p class="panel-heading">Lọc nội dung:</p>
- <div class="panel-block">
-    <p class="control has-icons-left">
-      <input class="input is-small" type="text" placeholder="Tìm kiếm ở đây">
-      <span class="icon is-small is-left">
-        <i class="fa fa-search" aria-hidden="true"></i>
-      </span>
-    </p>
-</div>
-    <%= link_to 'Tất cả', jobs_path, class: "panel-block" %>
-    <%= link_to 'Toàn thời gian', jobs_path(job_type: "Toàn thời gian"), class: "panel-block" %>
-    <%= link_to 'Bán thời gian', jobs_path(job_type: "Bán thời gian"), class: "panel-block" %>
-    <%= link_to 'Tự do', jobs_path(job_type: "Tự do"), class: "panel-block" %>
-    <%= link_to 'Hợp đồng', jobs_path(job_type: "Hợp đồng"), class: "panel-block" %>
-    <%= link_to 'Thực tập', jobs_path(job_type: "Thực tập"), class: "panel-block" %>
+<p class="panel-heading">Loại công việc:</p>
+<%= link_to 'Toàn thời gian', jobs_path(job_type: "Toàn thời gian"), class: "panel-block" %>
+<%= link_to 'Bán thời gian', jobs_path(job_type: "Bán thời gian"), class: "panel-block" %>
+<%= link_to 'Tự do', jobs_path(job_type: "Tự do"), class: "panel-block" %>
+<%= link_to 'Hợp đồng', jobs_path(job_type: "Hợp đồng"), class: "panel-block" %>
+<%= link_to 'Thực tập', jobs_path(job_type: "Thực tập"), class: "panel-block" %>
 </nav>
-<nav class="panel">
+<!--<nav class="panel">
 <div class="select is-multiple is-fullwidth">
   <select multiple size="8" onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
     <option value="?location=An+Giang">An Giang</option>
@@ -89,4 +80,87 @@
     <option value="?location=Hồ+Chí+Minh">Hồ Chí Minh</option>
   </select>
 </div>
+</nav>-->
+<nav class="panel" style="padding-top:10px">
+<p class="panel-heading">Mức lương:</p>
+<%= link_to 'Từ 1 triệu', jobs_path, class: "panel-block" %>
+<%= link_to 'Từ 2 triệu', jobs_path, class: "panel-block" %>
+<%= link_to 'Từ 5 triệu', jobs_path, class: "panel-block" %>
+<%= link_to 'Từ 10 triệu', jobs_path, class: "panel-block" %>
+<%= link_to 'Từ 20 triệu', jobs_path, class: "panel-block" %>
+<%= link_to 'Thương lượng', jobs_path, class: "panel-block" %>
 </nav>
+
+<div class="control has-icons-left">
+  <div class="select">
+    <select onchange="this.options[this.selectedIndex].value && (window.location = this.options[this.selectedIndex].value)">
+    <option selected>Tất cả</option>
+    <option value="?location=An+Giang">An Giang</option>
+    <option value="?location=Bà+Rịa+Vũng+Tàu">Bà Rịa Vũng Tàu</option>
+    <option value="?location=Bạc+Liêu">Bạc Liêu</option>
+    <option value="?location=Bắc+Giang">Bắc Giang</option>
+    <option value="?location=Bắc+Kạn">Bắc Kạn</option>
+    <option value="?location=Bắc+Ninh">Bắc Ninh</option>
+    <option value="?location=Bến+Tre">Bến Tre</option>
+    <option value="?location=Bình+Định">Bình Định</option>
+    <option value="?location=Bình+Dương">Bình Dương</option>
+    <option value="?location=Bình+Phước">Bình Phước</option>
+    <option value="?location=Bình+Thuận">Bình Thuận</option>
+    <option value="?location=Cà+Mau">Cà Mau</option>
+    <option value="?location=Cao+Bằng">Cao Bằng</option>
+    <option value="?location=Đắk+Lắk">Đắk Lắk</option>
+    <option value="?location=Đắk+Nông">Đắk Nông</option>
+    <option value="?location=Điện+Biên">Điện Biên</option>
+    <option value="?location=Đồng+Nai">Đồng Nai</option>
+    <option value="?location=Đồng+Tháp">Đồng Tháp</option>
+    <option value="?location=Gia+Lai">Gia Lai</option>
+    <option value="?location=Hà+Giang">Hà Giang</option>
+    <option value="?location=Hà+Nam">Hà Nam</option>
+    <option value="?location=Hà+Tĩnh">Hà Tĩnh</option>
+    <option value="?location=Hải+Dương">Hải Dương</option>
+    <option value="?location=Hậu+Giang">Hậu Giang</option>
+    <option value="?location=Hòa+Bình">Hòa Bình</option>
+    <option value="?location=Hưng+Yên">Hưng yên</option>
+    <option value="?location=Khánh+Hòa">Khánh Hòa</option>
+    <option value="?location=Kiên+Giang">Kiên Giang</option>
+    <option value="?location=Kon+Tum">Kon Tum</option>
+    <option value="?location=Lai+Châu">Lai Châu</option>
+    <option value="?location=Lâm+Đồng">Lâm Đồng</option>
+    <option value="?location=Lạng+Sơn">Lạng Sơn</option>
+    <option value="?location=Lào+Cai">Lào Cai</option>
+    <option value="?location=Long+An">Long An</option>
+    <option value="?location=Nam+Định">Nam Định</option>
+    <option value="?location=Nghệ+An">Nghệ An</option>
+    <option value="?location=Ninh+Bình">Ninh Bình</option>
+    <option value="?location=Ninh+Thuận">Ninh Thuận</option>
+    <option value="?location=Phú+Thọ">Phú Thọ</option>
+    <option value="?location=Quảng+Bình">Quảng Bình</option>
+    <option value="?location=Quảng+Nam">Quảng Nam</option>
+    <option value="?location=Quảng+Ngãi">Quãng Ngãi</option>
+    <option value="?location=Quảng+Ninh">Quảng Ninh</option>
+    <option value="?location=Quảng+Trị">Quảng Trị</option>
+    <option value="?location=Sóc+Trăng">Sóc Trăng</option>
+    <option value="?location=Sơn+La">Sơn La</option>
+    <option value="?location=Tây+Ninh">Tây Ninh</option>
+    <option value="?location=Thái+Bình">Thái Bình</option>
+    <option value="?location=Thái+Nguyên">Thái Nguyên</option>
+    <option value="?location=Thanh+Hóa">Thanh Hóa</option>
+    <option value="?location=Thừa+Thiên+Huế">Thừa Thiên Huế</option>
+    <option value="?location=Tiền+Giang">Tiền Giang</option>
+    <option value="?location=Trà+Vinh">Trà Vinh</option>
+    <option value="?location=Tuyên+Quang">Tuyên Quang</option>
+    <option value="?location=Vĩnh+Long">Vĩnh Long</option>
+    <option value="?location=Vĩnh+Phúc">Vĩnh Phúc</option>
+    <option value="?location=Yên+Bái">Yên Bái</option>
+    <option value="?location=Phú+Yên">Phú Yên</option>
+    <option value="?location=Cần+Thơ">Cần Thơ</option>
+    <option value="?location=Đà+Nẵng">Đà Nẵng</option>
+    <option value="?location=Hà+Nội">Hà Nội</option>
+    <option value="?location=Hải+Phòng">Hải Phòng</option>
+    <option value="?location=Hồ+Chí+Minh">Hồ Chí Minh</option>
+      </select>
+  </div>
+  <span class="icon is-medium is-left">
+    <i class="fa fa-globe"></i>
+  </span>
+</div>
